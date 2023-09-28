@@ -1,3 +1,11 @@
+# Disclaimer
+
+**This repository is a forked version** and is intended solely for the purpose of displaying our work. Everything contained within this repo, as well as on the associated GitHub Pages, does not interface with or connect to the genuine Penta web application.
+
+You are welcome to explore the inventory and even simulate checkouts through our mock partner setup, but please be aware that these actions have no real-world effects and are purely for demonstration purposes.
+
+If you're not an authorized partner, we **strongly advise** against accessing or using the real Penta web application linked in the repository from which this is forked. Accessing the real platform without proper authorization will pose an inconvenience to Penta.
+
 <img src="./src/assets/PentaLogo.png" width="300px" height="200px">
 
 # Inventory Request System

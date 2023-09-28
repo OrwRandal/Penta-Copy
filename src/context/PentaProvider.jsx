@@ -270,8 +270,8 @@ function PentaProvider({ children }) {
       return records
         .map((e) => {
           return {
-            label: e.fields.Description, //"VOID" for empty Descriptions
-            value: encodeURIComponent(e.fields["Item Code"]),
+            label: e.fields.Description.trimStart(),
+            value: encodeURIComponent(e.fields.Name.trimStart()),
           };
         })
         .sort((a, b) => {
