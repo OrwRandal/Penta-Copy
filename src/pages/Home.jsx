@@ -20,7 +20,7 @@ function Home() {
           id="penta-title"
           style={{ animationDelay: "0.107s" }}
         >
-          Penta Medical Recycling Inventory
+          Penta Medical Recycling Inventory Copy
         </h1>
         {/* Introduction Text */}
         <p
@@ -30,8 +30,12 @@ function Home() {
           To submit a request, simply click the 'Add to Cart' button on the
           item's card and proceed to the cart above. Once there, select your
           partner affiliation and click 'Request Items.'
+          <br></br>
+          <br></br>
+          (This is a replica of the genuine application, and it has no influence
+          on the real app in any way. Please feel free to explore and check
+          out!)
         </p>
-
         {/* Search Bar */}
         <div
           style={{

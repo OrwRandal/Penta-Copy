@@ -21,8 +21,6 @@ const MultipleSelect = () => {
       // Fetch Manufacturers and SKUs options from airTable
       const manufacturersOptions = await fetchSelectOptions("Manufacturers");
       const skuOptions = await fetchSelectOptions("SKUs");
-
-      // Update state with fetched options
       setManu(manufacturersOptions);
       setSKUs(skuOptions);
     };

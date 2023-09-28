@@ -52,7 +52,7 @@ function Cart() {
 
     // Check the stock status of each item ID
     for (const id of ids) {
-      const url = `https://api.airtable.com/v0/appHFwcwuXLTNCjtN/Inventory?filterByFormula=AND({Requests}=BLANK(),{Shipment Status}=BLANK(),NOT({SKU}=""),AND({Item ID}='${encodeURIComponent(
+      const url = `https://api.airtable.com/v0/appBrTbPbyamI0H6Z/Requests?filterByFormula=AND({Requests}=BLANK(),{Shipment Status}=BLANK(),NOT({SKU}=""),AND({Item ID}='${encodeURIComponent(
         id
       )}'))&maxRecords=1`;
 
@@ -130,6 +130,22 @@ function Cart() {
       ],
       typecast: true,
     };
+    setTimeout(() => {
+      setNotes("");
+      setCartCount(0);
+      const partner = localStorage["partner"];
+      localStorage.clear();
+      localStorage.setItem("partner", partner);
+      setIsLoading(false);
+      Toast({
+        message:
+          "Thank you for your time. As this is a demo application, we won't be able to respond to your submission!",
+        type: "is-info",
+      });
+    }, 1000);
+
+    return; // this is the copy, so no real requests are to be made
+    // this is a copy of the real airTable either way
 
     // Send the request data to the AirTable
     fetch(url, {

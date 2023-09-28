@@ -87,7 +87,7 @@ function PentaProvider({ children }) {
    */
   function urlCreator() {
     // Define the base URL for the AirTable API.
-    const baseUrl = "https://api.airtable.com/v0/appHFwcwuXLTNCjtN/Inventory?";
+    const baseUrl = "https://api.airtable.com/v0/appBrTbPbyamI0H6Z/Inventory?";
 
     // Define sorting criteria for the API query by oldest to newest available items.
     const sort = `sort[0][field]=Item ID&sort[0][direction]=asc`;
@@ -199,7 +199,7 @@ function PentaProvider({ children }) {
    * @returns {Promise} A promise that resolves to the fetched records or null in case of an error.
    */
   async function fetchTableRecords(tableName, offset = null) {
-    const baseId = "appHFwcwuXLTNCjtN";
+    const baseId = "appBrTbPbyamI0H6Z";
     const url = `https://api.airtable.com/v0/${baseId}/${tableName}?${
       offset ? `offset=${offset}` : ""
     }`;
@@ -234,7 +234,7 @@ function PentaProvider({ children }) {
    * @returns {Promise} A promise that resolves to the maximum size found in the inventory or null if no data is found.
    */
   async function fetchMaxSize() {
-    const url = `https://api.airtable.com/v0/appHFwcwuXLTNCjtN/Inventory?pageSize=1&sort[0][field]=Size&sort[0][direction]=desc&filterByFormula=AND(AND({Requests}="",{Shipment Status}=""),NOT({SKU}=""))`;
+    const url = `https://api.airtable.com/v0/appBrTbPbyamI0H6Z/Inventory?pageSize=1&sort[0][field]=Size&sort[0][direction]=desc&filterByFormula=AND(AND({Requests}="",{Shipment Status}=""),NOT({SKU}=""))`;
 
     const data = await fetchAPI(url);
     if (data && data.records && data.records.length > 0) {
@@ -270,8 +270,8 @@ function PentaProvider({ children }) {
       return records
         .map((e) => {
           return {
-            label: e.fields.Description || "VOID", //"VOID" for empty Descriptions
-            value: encodeURIComponent(e.fields["Item Code"].trimStart()),
+            label: e.fields.Description, //"VOID" for empty Descriptions
+            value: encodeURIComponent(e.fields["Item Code"]),
           };
         })
         .sort((a, b) => {
